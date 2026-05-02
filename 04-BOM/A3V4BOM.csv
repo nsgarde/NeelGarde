@@ -1,0 +1,41 @@
+Part Name/Description,Order Qty,Surplus,Unit Cost,Cost,Manufacturer,Mfg. Part Num.,Supplier,Supplier Part Num.,Supplier Link,Reference,Design Qty,Value,Footprint,Datasheet
+High-current JST headers (includes battery header),10,5,$0.13,$1.32,JST USA,B2PS-VH,Digikey,455-B2PS-VH-ND,https://www.digikey.com/en/products/detail/jst-sales-america-inc/B2PS-VH/926555,"BT1, H1, H2, H3, H4",5,Battery_Cell,314lib:JST_conn,https://www.jst-mfg.com/product/pdf/eng/eVH.pdf
+,,0,,$0.00,,,Digikey,,,,,JSTconn,314lib:JST_conn,
+JST connectors (for headers),10,10,$0.07,$0.73,JST USA,VHR-2N,Digikey,455-VHR-2N-ND,https://www.digikey.com/en/products/detail/jst-sales-america-inc/VHR-2N/608624,,,,,https://www.jst-mfg.com/product/pdf/eng/eVH.pdf
+JST crimp terminals (for headers),20,20,$0.06,$1.28,JST USA,SVH-21T-1.1,Digikey,455-SVH-21T-1.1CT-ND,https://www.digikey.com/en/products/detail/jst-sales-america-inc/SVH-21T-1-1/527366,,,,,https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/6379/JST.Suffix.Prefix.chart.06.01.23%20%283%29.pdf
+10uF capacitor,3,2,$0.23,$0.69,Murata Electronics,GRM188R61C106MA73D,Digikey,490-7201-1-ND,https://www.digikey.com/en/products/detail/murata-electronics/GRM188R61C106MA73D/3900480,C1,1,10uF,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM188R61C106MA73-01.pdf
+0.1uF capacitor,3,2,$0.08,$0.24,Murata Electronics,GRM033C71C104KE14D,Digikey,490-10387-1-ND,https://www.digikey.com/en/products/detail/murata-electronics/GRM033C71C104KE14D/5027472,C2,1,0.1uF,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,https://search.murata.co.jp/Ceramy/image/img/A01X/G101/ENG/GRM033C71C104KE14-01.pdf
+100nF capacitor,3,2,$0.27,$0.81,Samsung,CL10E104KC8VPNC,Digikey,1276-CL10E104KC8VPNCCT-ND,https://www.digikey.com/en/products/detail/samsung-electro-mechanics/CL10E104KC8VPNC/20498486,C3,1,100nF,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,https://mm.digikey.com/Volume0/opasdata/d220001/medias/docus/5458/CL10E104KC8VPNC_Spec.pdf
+44uF capacitor (substituted for a 47uF),4,2,$0.59,$2.36,Wurth,875105344006,Digikey,732-6421-1-ND,https://www.digikey.com/en/products/detail/w%C3%BCrth-elektronik/875105344006/5147585,"C4,C5",2,44uF,Capacitor_SMD:C_0603_1608Metric_Pad1.08x0.95mm_HandSolder,https://www.we-online.com/components/products/datasheet/875105344006.pdf
+diode,3,2,$0.14,$0.42,TSC,TS4148 RCG,,1801-TS4148RCGCT-ND,https://www.digikey.com/en/products/detail/taiwan-semiconductor-corporation/TS4148-RCG/7359811,D1,1,D,Diode_SMD:D_0603_1608Metric_Pad1.05x0.95mm_HandSolder,https://services.ts.com.tw/storage/resources/datasheet/TS4148%20SERIES_A2301.pdf 
+LEDs (4 colours),,,,,  Lite-On Inc.,,Digikey,,,"D2,D3,D4,D5",,LED,LED_SMD:LED_0603_1608Metric_Pad1.05x0.95mm_HandSolder,https://optoelectronics.liteon.com/upload/download/DS-22-99-0189/LTST-C190KSKT.pdf
+Red,5,4,$0.12,$0.60,,LTST-S270KRKT,Digikey,160-1479-1-ND,https://www.digikey.com/en/products/detail/liteon/LTST-S270KRKT/386895,,1,,,
+Blue,5,4,$0.12,$0.60,,LTST-C194TBKT,Digikey,160-1837-1-ND,https://www.digikey.com/en/products/detail/liteon/LTST-C194TBKT/2356225 ,,1,,,
+Green,5,4,$0.12,$0.60,,LTST-S270KGKT,Digikey,160-1478-1-ND,https://www.digikey.com/en/products/detail/liteon/LTST-S270KGKT/386893 ,,1,,,
+Yellow,5,4,$0.12,$0.60,,LTST-C190KSKT,Digikey,160-1437-1-ND,https://www.digikey.com/en/products/detail/liteon/LTST-C190KSKT/386819 ,,1,,,
+Fuseholder (have 3 from last sem.),0,-1,$0.00,$0.00,Wurth,696108003002,Reuse,732-11376-ND,https://www.digikey.com/en/products/detail/w%C3%BCrth-elektronik/696108003002/7244560 ,F1,1,1A,314lib:fuseholder,https://www.we-online.com/components/products/datasheet/696108003002.pdf 
+USB connector (pre-purchased),0,-1,$0.00,$0.00,GCT,USB3131-30-0230-A,Class,2073-USB3131-30-0230-ACT-ND,https://www.digikey.com/en/products/detail/gct/USB3131-30-0230-A/9859642 ,H5,1,USB3131-30-0230-A_REVB,314lib:GCT_USB3131-30-0230-A_REVB,https://gct.co/files/specs/usb3131-spec.pdf 
+8-pin headers (have 4 from last sem.),0,-3,$0.00,$0.00,Molex,702460801,Reuse,900-0702460801-ND,https://www.digikey.com/en/products/detail/molex/0702460801/760165,H6,3,UPSTREAM,314lib:CONN_7024608xx_MOL,https://www.molex.com/en-us/products/part-detail-pdf/702460801?display=pdf 
+,,-1,,$0.00,,,,,,H7,1,DOWNSTREAM,314lib:CONN_7024608xx_MOL,https://www.molex.com/en-us/products/part-detail-pdf/702460801?display=pdf
+,,-1,,$0.00,,,,,,H8,1,BACKUP,314lib:CONN_7024608xx_MOL,https://www.molex.com/en-us/products/part-detail-pdf/702460801?display=pdf
+Barrel jack (pre-purchased),0,-1,,$0.00,,,Class,,,J1,1,Barrel_Jack,Connector_BarrelJack:BarrelJack_CUI_PJ-102AH_Horizontal,~
+Pin header jumpers,10,5,$0.03,$0.28,Sullins Connector Solutions,QPC02SXGN-RC,Digikey,S9337-ND,https://www.digikey.com/en/products/detail/sullins-connector-solutions/QPC02SXGN-RC/2618262,JP1,5,Jumper_2_Open,314lib:SIP-2,https://s3.amazonaws.com/catalogspreads-pdf/PAGE128-129%20.100%20JUMPER.pdf 
+,,-2,,$0.00,,,Digikey,,,"JP2,JP4",2,Jumper_2_Bridged,314lib:SIP-2,
+,,-1,,$0.00,,,Digikey,,,JP3,1,Jumper_3_Bridged12,314lib:SIP-2,
+,,-1,,$0.00,,,Digikey,,,JP5,1,Jumper_3_Bridged12,Jumper:SolderJumper-3_P1.3mm_Open_RoundedPad1.0x1.5mm,
+4.7uH inductor,5,4,$0.17,$0.85,Murata Electronics,LQM18PN4R7MFRL,Digikey,490-12065-1-ND,https://www.digikey.com/en/products/detail/murata-electronics/LQM18PN4R7MFRL/4359186 ,L1,1,4.7uH,Inductor_SMD:L_0603_1608Metric_Pad1.05x0.95mm_HandSolder,https://search.murata.co.jp/Ceramy/image/img/P02/JELF243B-0033.pdf 
+10k resistor,10,8,$0.04,$0.39,Panasonic,ERJ-1GNF1002C,Digikey,P122414CT-ND,https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-1GNF1002C/2036226 ,"R1,R3",2,10k,Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder,https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf 
+220 resistor,25,21,$0.01,$0.14,Stackpole Electronics,RMCF0603JT220R,Digikey,RMCF0603JT220RCT-ND,https://www.digikey.com/en/products/detail/stackpole-electronics-inc/RMCF0603JT220R/1758014 ,"R2,R4,R5,R7",4,220,Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder,https://www.seielect.com/catalog/SEI-RMCF_RMCP.pdf 
+4.7k resistor,10,8,$0.04,$0.39,Panasonic,ERJ-1GNF4701C,Digikey,P123031CT-ND,https://www.digikey.com/en/products/detail/panasonic-electronic-components/ERJ-1GNF4701C/2036188 ,"R6,R8",2,4.7k,Resistor_SMD:R_0603_1608Metric_Pad0.98x0.95mm_HandSolder,https://industrial.panasonic.com/cdbs/www-data/pdf/RDA0000/AOA0000C304.pdf 
+Push-button switches,5,2,$0.20,$1.00,C&K,PTS636SM43SMTR LFS,Digikey,108-PTS636SM43SMTRLFSCT-ND,https://www.digikey.com/en/products/detail/c-k/PTS636SM43SMTR-LFS/10071723,"SW1,SW2,SW3",3,SW_Push,314lib:smd_btn,https://www.ckswitches.com/media/2779/pts636.pdf 
+"Test points (copper fingers for alligator clips, no purchase needed)",0,0,$0.00,$0.00,,,N/A,,,TP1,1,3.3V_TP,TestPoint:TestPoint_Pad_2.0x2.0mm,
+,,,,,,,,,,TP2,1,9V_TP,TestPoint:TestPoint_Pad_2.0x2.0mm,
+,,,,,,,,,,TP3,1,GND_TP,TestPoint:TestPoint_Pad_2.0x2.0mm,
+,,,,,,,,,,"TP4,TP5",2,RX_TP,TestPoint:TestPoint_Pad_2.0x2.0mm,
+,,,,,,,,,,TP6,1,Dminus_TP,TestPoint:TestPoint_Pad_2.0x2.0mm,
+,,,,,,,,,,TP7,1,Dplus_TP,TestPoint:TestPoint_Pad_2.0x2.0mm,
+3.3V power regulator,3,2,$0.71,$2.13,Diodes Inc.,AP63203WU-7,Digikey,AP63203WU-7DICT-ND,https://www.digikey.com/en/products/detail/diodes-incorporated/AP63203WU-7/9858426?s=N4IgTCBcDaIIIAUBsBmMAGFB1AqgWgHYQBdAXyA ,U1,1,AP63203WU-7,314lib:AP63203WU-7_DIO,https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf 
+ESP32 Microcontroller (pre-purchased),0,0,$0.00,$0.00,Espressif Systems,1965-ESP32-S3-WROOM-1-N4CT-ND,Class,N/A,https://www.digikey.com/en/products/detail/espressif-systems/ESP32-S3-WROOM-1-N4/16162639 ,U2,1,ESP32-S3-WROOM-1-N4,314lib:XCVR_ESP32-S3-WROOM-1-N4,https://www.espressif.com/sites/default/files/documentation/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf 
+12V NIMH battery pack,1,0,$21.99,$21.99,Tenergy,,Amazon,B077Y9HNTF,https://www.amazon.com/Tenergy-Capacity-Rechargeable-Replacement-Equipments/dp/B077Y9HNTF ,,,,,
+NIMH battery charger,1,0,$21.99,$21.99,Tenergy,,Amazon,T01005 ,https://www.amazon.com/Tenergy-RC-Airplanes-Batteries-Compatible-Alligator/dp/B001AVUAVC ,,,,,
+,,,Total:,$59.41,,,,,,,,,,

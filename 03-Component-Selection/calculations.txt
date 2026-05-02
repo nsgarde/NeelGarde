@@ -1,0 +1,8 @@
+for internal use:
+Boost regulator calculations:
+Inductor sizing:
+Pl = (12V+0.5V-9V)(2A)=7W
+Pl/Fosc = 7W/120kHz = 58.3uJ
+Inductor: 100uH, 1.82ohm
+Ipeak = (9V/1ohm)×(1−e^(−1×4.2us/100uH)) = (9 − 9 × 0.958 869 780 6^(S))A
+We're going with https://www.digikey.com/en/products/detail/bourns-inc/2321-V-RC/2535034 (560uH 3.6A 140mOhm) because it's not tarrif'd and super expensive.
