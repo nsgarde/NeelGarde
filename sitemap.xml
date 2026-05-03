@@ -41,7 +41,22 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
+         <loc>https://neelgarde.github.io/NeelGarde/08-Reflection/Reflection/</loc>
+         <lastmod>2026-05-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
          <loc>https://neelgarde.github.io/NeelGarde/09-API/api/</loc>
+         <lastmod>2026-05-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://neelgarde.github.io/NeelGarde/10-Resources/resources/</loc>
+         <lastmod>2026-05-03</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://neelgarde.github.io/NeelGarde/11-Hardware%20V2/hardwarev2/</loc>
          <lastmod>2026-05-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
