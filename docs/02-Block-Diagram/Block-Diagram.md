@@ -23,7 +23,7 @@ The following block diagram represents the intended design:<br>
 [drawio source file](BDV5.drawio)
 <br>
 Due to defects in a tape of voltage regulators and some of the PCBs, as well as a design flaw in the UART pins of choice, the following system was prototyped:<br>
-![A3 prototype block diagram](BDV5.png)
+![A3 prototype block diagram](BDV6.png)
 [drawio source file](BDV6.drawio)
 
 ## Decision making process
