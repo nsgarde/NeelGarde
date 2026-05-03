@@ -20,6 +20,11 @@ Featured on this page is a block diagram for subsystem A2. This subsystem is res
 ## Block Diagram
 The following block diagram represents the intended design:<br>
 ![A3 inteded block diagram](BDV5.png)
+[drawio source file](BDV5.drawio)
 <br>
 Due to defects in a tape of voltage regulators and some of the PCBs, as well as a design flaw in the UART pins of choice, the following system was prototyped:<br>
 ![A3 prototype block diagram](BDV5.png)
+[drawio source file](BDV6.drawio)
+
+## Decision making process
+To develop this block diagram for system functionality, the requirements of the system, namely to regulate/distribute power and perform bluetooth functionality were considered. Major points of failure, such as faulty UART headers/pins, extra need for power headers, and debugging buttons were considered. With all of these required components, the simplest connection layouts were chosen.
