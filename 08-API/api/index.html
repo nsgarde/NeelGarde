@@ -9,13 +9,13 @@
       
       
       
-        <link rel="canonical" href="https://neelgarde.github.io/NeelGarde/08-Reflection/Reflection/">
+        <link rel="canonical" href="https://neelgarde.github.io/NeelGarde/08-API/api/">
       
       
         <link rel="prev" href="../../07-Power%20Budget/Power-Budget/">
       
       
-        <link rel="next" href="../../09-API/api/">
+        <link rel="next" href="../../09-Resources/resources/">
       
       
       <link rel="icon" href="../../static/logo314.png">
@@ -26,7 +26,7 @@
 
     
       
-        <title>Reflection - EGR 314 Neel Garde</title>
+        <title>Module's API - EGR 314 Neel Garde</title>
       
     
     
@@ -90,7 +90,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#review-of-modules-sucess" class="md-skip">
+        <a href="#overview" class="md-skip">
           Skip to content
         </a>
       
@@ -125,7 +125,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Reflection
+              Module's API
             
           </span>
         </div>
@@ -366,7 +366,7 @@
   
     
   
-  08 Reflection
+  08 API
 
         </a>
       </li>
@@ -381,12 +381,12 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../09-API/api/" class="md-tabs__link">
+        <a href="../../09-Resources/resources/" class="md-tabs__link">
           
   
     
   
-  09 API
+  09 Resources
 
         </a>
       </li>
@@ -401,12 +401,12 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../10-Resources/resources/" class="md-tabs__link">
+        <a href="../../10-Hardware%20V2/hardwarev2/" class="md-tabs__link">
           
   
     
   
-  10 Resources
+  10 Hardware V2
 
         </a>
       </li>
@@ -421,12 +421,12 @@
     
     
       <li class="md-tabs__item">
-        <a href="../../11-Hardware%20V2/hardwarev2/" class="md-tabs__link">
+        <a href="../../11-Reflection/Reflection/" class="md-tabs__link">
           
   
     
   
-  11 Hardware V2
+  11 Reflection
 
         </a>
       </li>
@@ -861,7 +861,7 @@
             
   
   <span class="md-ellipsis">
-    08 Reflection
+    08 API
   </span>
   
 
@@ -871,7 +871,7 @@
         <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
           <label class="md-nav__title" for="__nav_9">
             <span class="md-nav__icon md-icon"></span>
-            08 Reflection
+            08 API
           </label>
           <ul class="md-nav__list" data-md-scrollfix="">
             
@@ -893,7 +893,7 @@
           
   
   <span class="md-ellipsis">
-    Reflection
+    Module's API
   </span>
   
 
@@ -904,7 +904,7 @@
         
   
   <span class="md-ellipsis">
-    Reflection
+    Module's API
   </span>
   
 
@@ -924,36 +924,42 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#review-of-modules-sucess" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Review of Module's Sucess
+      Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uart-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      UART Messages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type Data Structure
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#esp32-tips" class="md-nav__link">
+  <a href="#controller-gatt-service-attributes" class="md-nav__link">
     <span class="md-ellipsis">
-      ESP32 Tips:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lessons-learned" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lessons Learned
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recommendations-for-future-students" class="md-nav__link">
-    <span class="md-ellipsis">
-      Recommendations for Future Students
+      Controller GATT service attributes
     </span>
   </a>
   
@@ -1002,11 +1008,11 @@
         
   
   
-    <a href="../../09-API/api/" class="md-nav__link">
+    <a href="../../09-Resources/resources/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    09 API
+    09 Resources
   </span>
   
 
@@ -1048,11 +1054,11 @@
         
   
   
-    <a href="../../10-Resources/resources/" class="md-nav__link">
+    <a href="../../10-Hardware%20V2/hardwarev2/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    10 Resources
+    10 Hardware V2
   </span>
   
 
@@ -1094,11 +1100,11 @@
         
   
   
-    <a href="../../11-Hardware%20V2/hardwarev2/" class="md-nav__link">
+    <a href="../../11-Reflection/Reflection/" class="md-nav__link">
       
   
   <span class="md-ellipsis">
-    11 Hardware V2
+    11 Reflection
   </span>
   
 
@@ -1138,36 +1144,42 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix="">
       
         <li class="md-nav__item">
-  <a href="#review-of-modules-sucess" class="md-nav__link">
+  <a href="#overview" class="md-nav__link">
     <span class="md-ellipsis">
-      Review of Module's Sucess
+      Overview
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#uart-messages" class="md-nav__link">
+    <span class="md-ellipsis">
+      UART Messages
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type Data Structure
     </span>
   </a>
   
 </li>
       
         <li class="md-nav__item">
-  <a href="#esp32-tips" class="md-nav__link">
+  <a href="#controller-gatt-service-attributes" class="md-nav__link">
     <span class="md-ellipsis">
-      ESP32 Tips:
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#lessons-learned" class="md-nav__link">
-    <span class="md-ellipsis">
-      Lessons Learned
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#recommendations-for-future-students" class="md-nav__link">
-    <span class="md-ellipsis">
-      Recommendations for Future Students
+      Controller GATT service attributes
     </span>
   </a>
   
@@ -1188,7 +1200,7 @@
                   
 
   
-    <a href="https://github.com/NeelGarde/NeelGarde/edit/main/docs/08-Reflection/Reflection.md" title="Edit this page" class="md-content__button md-icon">
+    <a href="https://github.com/NeelGarde/NeelGarde/edit/main/docs/08-API/api.md" title="Edit this page" class="md-content__button md-icon">
       
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4v-2m10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1 2.1 2.1Z"></path></svg>
     </a>
@@ -1196,46 +1208,505 @@
   
 
 
-  <h1>Reflection</h1>
+  <h1>Module's API</h1>
 
-<h2 id="review-of-modules-sucess">Review of Module's Sucess</h2>
-<p>The module succeeded in meeting all of it's target goals across multiple boards. Due to defects in the boards and voltage regulators, power-related goals were only met on one board, and bluetooth goals were met on another board. With a breakout, the final demo was able to meet all the requirements.</p>
-<h2 id="esp32-tips">ESP32 Tips:</h2>
-<ul>
-<li>If your ESP32 with micropython is unable to upload code after a bad program, try the following commands (requires esptool):<ul>
-<li>erase flash</li>
-<li>rewrite flash</li>
-<li>zero the memory address a few bytes after the firmware ends</li>
-<li>rewrite flash</li>
-<li>esptool run</li>
-</ul>
-</li>
-<li>On desktop Linux systems (personally using Debian 13), Pymakr will not work, as it is severely outdated. A more flexibile and standard workflow can be obtained by writing simple shell scripts around the mpremote tool. You can use your text editor/IDE of choice to write python code and use mpremote or your shell scripts from the terminal.<ul>
-<li>mpremote allows you to mount your local directory to the esp32. This is very useful for testing, since you don't need to copy anything.</li>
-<li>mpremote ls/cp/rm commands follow standard posix syntax.</li>
-</ul>
-</li>
-<li>Leaving IO0 floating will cause the ESP32 to believe it is in boot mode. Pull this pin high (with a jumper or a switch).</li>
-<li>Do not use RXD0/TXD0 as your UART pins. These will recieve hardware interrupts and result in strange behaviours.</li>
-<li>micropython sometimes throws errors with nested directories, even if a path is clearly specified. Use flat directory structures to minimize errors.</li>
-<li>Overall, <em>use C on the ESP32</em> if possible! This project used micropython to make use of the aioble library. If you do not need a wireless function, C will make life much easier.</li>
-<li>If you use asyncio with micropython, note that try-catches behave in slightly different ways compared to C or C++. Read the documentation about these carefully.</li>
-<li>If your ESP makes a high-pitched whining noise, add extra decoupling capacitors.</li>
-</ul>
-<h2 id="lessons-learned">Lessons Learned</h2>
-<ol>
-<li>Account for power regulation to fail, and add breakout headers in advance for this to supply power to test/debug.</li>
-<li>I learnt a lot more about desoldering than I've had to in the past.</li>
-</ol>
-<h2 id="recommendations-for-future-students">Recommendations for Future Students</h2>
-<ol>
-<li><em>Standardize as many components as you can across your team so you all have spares!!!</em></li>
-<li>Build your board with sufficient options to solder/jump functionality if something fails.</li>
-<li>Build your team's system so your project isn't reliant on a single board to show functionality. Eg, our team relied on a display on our HMI board, which was not working during the demo. We instead showed sensor data through connecting laptops to the bluetooth relay and camera boards. We had multiple boards fail to regulate power, so 3.3V power was supplied to them through pins from the battery breakout board.</li>
-<li>If you're working in a large team, split up into subteams early. Our team had 10 people, which made coordinating as a full group difficult. However, we had small subteams that could act largely independantly of eachother, so this was not an issue.</li>
-<li><em>Review all of your PCBs in a team. Your teammates will catch a lot of things you didn't, and vice-versa!!!</em></li>
-<li><em>version control is your friend!!!</em> Using a version control system of your choice (git is the most common) will make managing different versions of your software much easier. You can rollback and track changes, which is <em>much</em> easier than maintaining different files in different places. Please take the time to learn this at the start. A local repository is fine. You will thank yourself by the end!</li>
-</ol>
+<h2 id="overview">Overview</h2>
+<p>This page lists all possible API calls that subsystem A3 can handle. Subsystem A3 acts as the onboard side of the bluetooth relay connecting the handheld controller to the boat.
+To facilitate communications, A3 uses defined message types following the team-wide UART protocol as well as GATT charecteristics defined by it's custom service. All of these message type are relayed to the necessary downstream board over UART or upstream via bluetooth with the exception of message type L (rollcall), which is a team-wide debugging API used to test the daisy-chain network by lighting each up board as it travels through the chain.</p>
+<h3 id="uart-messages">UART Messages</h3>
+<h2 id="message-type-data-structure">Message Type Data Structure</h2>
+<p>Message Type A - Set Steering Angle</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><strong>Byte 1</strong></th>
+<th style="text-align: center;"><strong>Byte 2</strong></th>
+<th style="text-align: center;"><strong>Byte 3</strong></th>
+<th style="text-align: center;"><strong>Byte 4</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Variable Name</td>
+<td style="text-align: center;">Sender_ID</td>
+<td style="text-align: center;">Reciever_ID</td>
+<td style="text-align: center;">Message_Type</td>
+<td style="text-align: center;">Angle</td>
+</tr>
+<tr>
+<td style="text-align: center;">Variable Type</td>
+<td style="text-align: center;">char</td>
+<td style="text-align: center;">char</td>
+<td style="text-align: center;">char</td>
+<td style="text-align: center;">uint8_t</td>
+</tr>
+<tr>
+<td style="text-align: center;">Min Value</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">E</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">Max Value</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">E</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">255</td>
+</tr>
+<tr>
+<td style="text-align: center;">Example</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">E</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">125</td>
+</tr>
+</tbody>
+</table>
+<p>Message Type B - Set Throttle Percentage:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><strong>Byte 1</strong></th>
+<th style="text-align: center;"><strong>Byte 2</strong></th>
+<th style="text-align: center;"><strong>Byte 3</strong></th>
+<th style="text-align: center;"><strong>Byte 4</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Variable Name</td>
+<td style="text-align: center;">Sender_ID</td>
+<td style="text-align: center;">Reciever_ID</td>
+<td style="text-align: center;">Message_Type</td>
+<td style="text-align: center;">Throttle</td>
+</tr>
+<tr>
+<td style="text-align: center;">Variable Type</td>
+<td style="text-align: center;">char</td>
+<td style="text-align: center;">char</td>
+<td style="text-align: center;">char</td>
+<td style="text-align: center;">uint8_t</td>
+</tr>
+<tr>
+<td style="text-align: center;">Min Value</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">D</td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">Max Value</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">D</td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">255</td>
+</tr>
+<tr>
+<td style="text-align: center;">Example</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">D</td>
+<td style="text-align: center;">B</td>
+<td style="text-align: center;">125</td>
+</tr>
+</tbody>
+</table>
+<p>Message Type C - Set Camera Angle:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><strong>Byte 1</strong></th>
+<th style="text-align: center;"><strong>Byte 2</strong></th>
+<th style="text-align: center;"><strong>Byte 3</strong></th>
+<th style="text-align: center;"><strong>Byte 4</strong></th>
+<th style="text-align: center;"><strong>Byte 5</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Variable Name</td>
+<td style="text-align: center;">Sender_ID</td>
+<td style="text-align: center;">Reciever_ID</td>
+<td style="text-align: center;">Message_Type</td>
+<td style="text-align: center;">Yaw</td>
+<td style="text-align: center;">Pitch</td>
+</tr>
+<tr>
+<td style="text-align: center;">Variable Type</td>
+<td style="text-align: center;">char</td>
+<td style="text-align: center;">char</td>
+<td style="text-align: center;">char</td>
+<td style="text-align: center;">int8_t</td>
+<td style="text-align: center;">int8_t</td>
+</tr>
+<tr>
+<td style="text-align: center;">Min Value</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">G</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">-128</td>
+<td style="text-align: center;">-128</td>
+</tr>
+<tr>
+<td style="text-align: center;">Max Value</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">G</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">127</td>
+<td style="text-align: center;">127</td>
+</tr>
+<tr>
+<td style="text-align: center;">Example</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">G</td>
+<td style="text-align: center;">C</td>
+<td style="text-align: center;">125</td>
+<td style="text-align: center;">90</td>
+</tr>
+</tbody>
+</table>
+<p>Message Type D - Take Photo:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><strong>Byte 1</strong></th>
+<th style="text-align: center;"><strong>Byte 2</strong></th>
+<th style="text-align: center;"><strong>Byte 3</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Variable Name</td>
+<td style="text-align: center;">Sender_ID</td>
+<td style="text-align: center;">Reciever_ID</td>
+<td style="text-align: center;">Message_Type</td>
+</tr>
+<tr>
+<td style="text-align: center;">Variable Type</td>
+<td style="text-align: center;">char</td>
+<td style="text-align: center;">char</td>
+<td style="text-align: center;">char</td>
+</tr>
+<tr>
+<td style="text-align: center;">Min Value</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">D</td>
+</tr>
+<tr>
+<td style="text-align: center;">Max Value</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">D</td>
+</tr>
+<tr>
+<td style="text-align: center;">Example</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">D</td>
+</tr>
+</tbody>
+</table>
+<p>Message Type E - Send Speed Data:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><strong>Byte 1</strong></th>
+<th style="text-align: center;"><strong>Byte 2</strong></th>
+<th style="text-align: center;"><strong>Byte 3</strong></th>
+<th style="text-align: center;"><strong>Byte 4</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Variable Name</td>
+<td style="text-align: center;">Sender_ID</td>
+<td style="text-align: center;">Reciever_ID</td>
+<td style="text-align: center;">Message_Type</td>
+<td style="text-align: center;">Speed</td>
+</tr>
+<tr>
+<td style="text-align: center;">Variable Type</td>
+<td style="text-align: center;">char</td>
+<td style="text-align: center;">char</td>
+<td style="text-align: center;">char</td>
+<td style="text-align: center;">int8_t</td>
+</tr>
+<tr>
+<td style="text-align: center;">Min Value</td>
+<td style="text-align: center;">H</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">E</td>
+<td style="text-align: center;">-128</td>
+</tr>
+<tr>
+<td style="text-align: center;">Max Value</td>
+<td style="text-align: center;">H</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">E</td>
+<td style="text-align: center;">127</td>
+</tr>
+<tr>
+<td style="text-align: center;">Example</td>
+<td style="text-align: center;">H</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">E</td>
+<td style="text-align: center;">-3</td>
+</tr>
+</tbody>
+</table>
+<p>Message Type F - Send Distance Data:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><strong>Byte 1</strong></th>
+<th style="text-align: center;"><strong>Byte 2</strong></th>
+<th style="text-align: center;"><strong>Byte 3</strong></th>
+<th style="text-align: center;"><strong>Byte 4</strong></th>
+<th style="text-align: center;"><strong>Byte 5</strong></th>
+<th style="text-align: center;"><strong>Byte 6</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Variable Name</td>
+<td style="text-align: center;">Sender_ID</td>
+<td style="text-align: center;">Reciever_ID</td>
+<td style="text-align: center;">Message_Type</td>
+<td style="text-align: center;">Distance 1</td>
+<td style="text-align: center;">Distance 2</td>
+<td style="text-align: center;">Distance 3</td>
+</tr>
+<tr>
+<td style="text-align: center;">Variable Type</td>
+<td style="text-align: center;">char</td>
+<td style="text-align: center;">char</td>
+<td style="text-align: center;">char</td>
+<td style="text-align: center;">char</td>
+<td style="text-align: center;">char</td>
+<td style="text-align: center;">char</td>
+</tr>
+<tr>
+<td style="text-align: center;">Min Value</td>
+<td style="text-align: center;">J</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">'0'</td>
+<td style="text-align: center;">'0'</td>
+<td style="text-align: center;">'0'</td>
+</tr>
+<tr>
+<td style="text-align: center;">Max Value</td>
+<td style="text-align: center;">J</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">'9'</td>
+<td style="text-align: center;">'9'</td>
+<td style="text-align: center;">'9'</td>
+</tr>
+<tr>
+<td style="text-align: center;">Example</td>
+<td style="text-align: center;">J</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">'1'</td>
+<td style="text-align: center;">'8'</td>
+<td style="text-align: center;">'5'</td>
+</tr>
+</tbody>
+</table>
+<p>Message Type G - Send Temperature Data:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><strong>Byte 1</strong></th>
+<th style="text-align: center;"><strong>Byte 2</strong></th>
+<th style="text-align: center;"><strong>Byte 3</strong></th>
+<th style="text-align: center;"><strong>Byte 4</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Variable Name</td>
+<td style="text-align: center;">Sender_ID</td>
+<td style="text-align: center;">Reciever_ID</td>
+<td style="text-align: center;">Message_Type</td>
+<td style="text-align: center;">Temperature</td>
+</tr>
+<tr>
+<td style="text-align: center;">Variable Type</td>
+<td style="text-align: center;">char</td>
+<td style="text-align: center;">char</td>
+<td style="text-align: center;">char</td>
+<td style="text-align: center;">uint8_t</td>
+</tr>
+<tr>
+<td style="text-align: center;">Min Value</td>
+<td style="text-align: center;">I</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">G</td>
+<td style="text-align: center;">0</td>
+</tr>
+<tr>
+<td style="text-align: center;">Max Value</td>
+<td style="text-align: center;">I</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">G</td>
+<td style="text-align: center;">255</td>
+</tr>
+<tr>
+<td style="text-align: center;">Example</td>
+<td style="text-align: center;">I</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">G</td>
+<td style="text-align: center;">125</td>
+</tr>
+</tbody>
+</table>
+<p>Message Type L - Rolecall:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"></th>
+<th style="text-align: center;"><strong>Byte 1</strong></th>
+<th style="text-align: center;"><strong>Byte 2</strong></th>
+<th style="text-align: center;"><strong>Byte 3</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">Variable Name</td>
+<td style="text-align: center;">Sender_ID</td>
+<td style="text-align: center;">Reciever_ID</td>
+<td style="text-align: center;">Message_Type</td>
+</tr>
+<tr>
+<td style="text-align: center;">Variable Type</td>
+<td style="text-align: center;">char</td>
+<td style="text-align: center;">char</td>
+<td style="text-align: center;">char</td>
+</tr>
+<tr>
+<td style="text-align: center;">Min Value</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">J</td>
+</tr>
+<tr>
+<td style="text-align: center;">Max Value</td>
+<td style="text-align: center;">J</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">J</td>
+</tr>
+<tr>
+<td style="text-align: center;">Example</td>
+<td style="text-align: center;">A</td>
+<td style="text-align: center;">X</td>
+<td style="text-align: center;">J</td>
+</tr>
+</tbody>
+</table>
+<h2 id="controller-gatt-service-attributes">Controller GATT service attributes</h2>
+<p>To accommodate wireless remote control, a custom BLE GATT service will be defined. In accordance with the BLE standard, custom services use a 16-byte UUID. The UUID for our controller service is 8bbd8ff7-3d84-4e81-9d46-70b6cb79e76a. The convention 'upstream' is used to refer to the wireless controller/human operator, and 'downstream' refers to the boat. Our service has the following characteristics: <br></p>
+<p>Upstream Message (5699aead-41fc-4705-9c65-7c84d8bc04c):<br>
+This characteristic contains messages intended to be sent upstream (to the controller) from the boat. Any message of arbitrary length addressed to subsystems A1 or A2 will be written to this characteristic by A3, provided it is of a valid format. A2 will relay any messages addressed to A1 when notified of an update.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>Read</strong></th>
+<th style="text-align: center;"><strong>Write</strong></th>
+<th style="text-align: center;"><strong>Notify</strong></th>
+<th style="text-align: center;"><strong>Capture</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">True</td>
+<td style="text-align: center;">False</td>
+<td style="text-align: center;">True</td>
+<td style="text-align: center;">False</td>
+</tr>
+<tr>
+<td style="text-align: center;"><br></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">Downstream Message (a037a1df-ccaf-480c-b7a4-6526a6848887):<br></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">This characteristic contains messages intended to be sent downstream (to the boat) from the controller. Any valid message will be written to this characteristic by subsystem A2 and relayed to the rest of the boat by A3 when notified of an update.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>Read</strong></th>
+<th style="text-align: center;"><strong>Write</strong></th>
+<th style="text-align: center;"><strong>Notify</strong></th>
+<th style="text-align: center;"><strong>Capture</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">True</td>
+<td style="text-align: center;">True</td>
+<td style="text-align: center;">True</td>
+<td style="text-align: center;">True</td>
+</tr>
+<tr>
+<td style="text-align: center;"><br></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">Rollcall (d9cba376-e9c9-4db7-a6f2-4c6783c1dade):<br></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">To remove the requirement for parsing relayed messages from the previous two characteristics, a dedicated rollcall characteristic will be used. This can be written by either A2 or A3 to inform the other of a rollcall. Both systems will perform their rollcall functionality and proceed to relay the message upstream or downstream as needed, depending on the sender.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>Read</strong></th>
+<th style="text-align: center;"><strong>Write</strong></th>
+<th style="text-align: center;"><strong>Notify</strong></th>
+<th style="text-align: center;"><strong>Capture</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">True</td>
+<td style="text-align: center;">True</td>
+<td style="text-align: center;">True</td>
+<td style="text-align: center;">True</td>
+</tr>
+</tbody>
+</table>
 
 
 
@@ -1291,13 +1762,13 @@
         
         
           
-          <a href="../../09-API/api/" class="md-footer__link md-footer__link--next" aria-label="Next: Module's API">
+          <a href="../../09-Resources/resources/" class="md-footer__link md-footer__link--next" aria-label="Next: Module's Resources">
             <div class="md-footer__title">
               <span class="md-footer__direction">
                 Next
               </span>
               <div class="md-ellipsis">
-                Module's API
+                Module's Resources
               </div>
             </div>
             <div class="md-footer__button md-icon">
