@@ -4,6 +4,13 @@ title: Module's Selected Major Components
 
 ## Module's Selected Major Components
 
+### Summary
+| Function               | Name                     | Datasheet |
+| ---------------------- | ------------------------ | --------- |
+| Microcontroller        | ESP32-S3-WROOM-1-N4      | [ESP32-S3-WROOM-1-N4](https://documentation.espressif.com/esp32-s3-wroom-1_wroom-1u_datasheet_en.pdf) |
+| 3.3V voltage regulator | AP63203WU-7              | [AP63203WU-7](https://www.diodes.com/assets/Datasheets/AP63200-AP63201-AP63203-AP63205.pdf) |
+| Battery                | Tenergy 12V 2000mAh NiMH | [Tenergy 12V 2000mAh NiMH](https://www.amazon.com/Tenergy-Capacity-Rechargeable-Replacement-Equipments/dp/B077Y9HNTF) |
+
 The following sections are the selected major components necessary for subsystem A3:
 
 ### Microcontroller Selection
@@ -77,7 +84,7 @@ A more mature version of this system could integrate it's own charging and batte
     | Lower price/quantity compared to other options | No energy rating provided (assumed to be between 200-500mAh)           |
     | Simple connection                              | Can't power 12V subsystems                                             |
 
-2. Tenergy 12V NIMH rechargable pack
+2.  Tenergy 12V 2000mAh NiMH rechargable pack
 
     ![](tenergybattery.jpg)
 
