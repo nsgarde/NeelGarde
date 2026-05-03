@@ -3,125 +3,118 @@ title: Module's API
 ---
 
 ## Overview
-This page lists all possible API calls that subsystem A3 can handle. Subsystem A3 acts as the onboard side of the bluetooth relay connecting the handheld controller to the boat. As such, all messages sent to or from the controller are sent/recieved with a type 10 message to/from A2, and then sent as their original message type to their destination (using the original message's sender/reciever IDs). Bluetooth Heartbeat and Error APIs exist to warn the user of a disconnected wireless link, and stop boat propulsion/steering. The full-team Rollcall API is used for debugging faulty communications.
+This page lists all possible API calls that subsystem A3 can handle. Subsystem A3 acts as the onboard side of the bluetooth relay connecting the handheld controller to the boat.
+To facilitate communications, A3 uses defined message types following the team-wide UART protocol as well as GATT charecteristics defined by it's custom service. All of these message type are relayed to the necessary downstream board over UART or upstream via bluetooth with the exception of message type L (rollcall), which is a team-wide debugging API used to test the daisy-chain network by lighting each up board as it travels through the chain.
 
-The software for A3 can be downloaded [here](201A3_BLE_server.zip). The software requires the Micropython firmware for ESP32 and the aioble library (available through the mip package manager). File text encoding is Unix-style UTF-8 Unicode. 
-*If you notice issues with text layout, please ensure only UTF-8 Unicode is being used or convert to your system (Microsoft Windows and Apple MacOS both use modified encoding - BSD, Linux-based, and other Unix-like systems should have no issues)*
+The software for A3 can be downloaded [here](201A3_BLE_server.zip). The software requires the Micropython firmware for ESP32-S3 and the aioble library (available through the mip package manager).
 
-### Bluetooth Control APIs
+*Since Python syntax is dependant on indenting, operating systems using non-standard UTF-8 encoding may not display files properly. If you use Microsoft Windows or Apple OSX, please use the provided dos version of the file. Linux or BSD users can use the non-dos marked file without issues.*
 
-Message type 9 - Bluetooth Error:
+### UART Messages
 
-||**Byte 1** |**Byte 2**|**Byte 3**|
-| :-------: | :-------: | :-------: | :-------: |
-| Variable Name | Sender_ID | Reciever_ID | Message_Type |
-| Variable Type | char | char | uint8_t |
-| Min Value | B | A | 9 |
-| Max Value | C | G | 9 |
-| Example | C | G | 9 |
+## Message Type Data Structure
 
-Message type 10 - Bluetooth Relay:
-
-||**Byte 1** |**Byte 2**|**Byte 3**|**Byte 4**|**Byte 5**|**Byte 6**|**Byte 7**|
-| :-------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: |
-| Variable Name | Sender_ID | Reciever_ID | Message_Type | Relay_Sender | Relay_Reciever | Relay_Type | Data |
-| Variable Type | char | char | char | char | char | char | char |
-| Min Value | B | B | 10 | A | A | 1 | 00000000 |
-| Max Value | C | C | 10 | J | X | 12 | 11111111 |
-| Example | C | B | 10 | I | A | 7 | 00110101 |
-
-Message type 11 - Bluetooth Heartbeat:
-
-||**Byte 1** |**Byte 2**|**Byte 3**|
-| :-------: | :-------: | :-------: | :-------: |
-| Variable Name | Sender_ID | Reciever_ID | Message_Type |
-| Variable Type | char | char | uint8_t |
-| Min Value | B | B |11 |
-| Max Value | C | C | 11|
-| Example | B | C |11 |
-
-### Bluetooth Relayed Messages (to boat)
-
-Message type 1 - Set Steering Angle
+Message Type A - Set Steering Angle
 
 ||**Byte 1** |**Byte 2**|**Byte 3**|**Byte 4**|
 | :-------: | :-------: | :-------: | :-------: | :-------: |
 | Variable Name | Sender_ID | Reciever_ID | Message_Type | Angle |
-| Variable Type | char | char | uint8_t | uint8_t |
-| Min Value | A | E |1 | 0 |
-| Max Value | A | E | 1| 255|
-| Example | A | E |1 | 125 | 
+| Variable Type | char | char | char | uint8_t |
+| Min Value | A | E | A | 0 |
+| Max Value | A | E | A | 255|
+| Example | A | E | A | 125 | 
 
-Message type 2 - Set Throttle Percentage:
+Message Type B - Set Throttle Percentage:
 
 ||**Byte 1** |**Byte 2**|**Byte 3**|**Byte 4**|
 | :-------: | :-------: | :-------: | :-------: | :-------: |
 | Variable Name | Sender_ID | Reciever_ID | Message_Type | Throttle |
-| Variable Type | char | char | uint8_t | uint8_t |
-| Min Value | A | D |2 | 0 |
-| Max Value | A | D | 2| 255|
-| Example | A | D |2 | 125 | 
+| Variable Type | char | char | char | uint8_t |
+| Min Value | A | D | B | 0 |
+| Max Value | A | D | B | 255 |
+| Example | A | D | B | 125 | 
 
-Message type 3 - Set Camera Angle:
+Message Type C - Set Camera Angle:
 
 ||**Byte 1** |**Byte 2**|**Byte 3**|**Byte 4**|**Byte 5**|
 | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: |
 | Variable Name | Sender_ID | Reciever_ID | Message_Type | Yaw | Pitch |
-| Variable Type | char | char | uint8_t | int8_t | int8_t |
-| Min Value | A | G |5 | -128 | -128 |
-| Max Value | A | G | 5| 127| 127 |
-| Example | A | G |5 | 125 | 90 |
+| Variable Type | char | char | char | int8_t | int8_t |
+| Min Value | A | G | C | -128 | -128 |
+| Max Value | A | G | C | 127 | 127 |
+| Example | A | G | C | 125 | 90 |
 
-Message type 4 - Take Photo:
+Message Type D - Take Photo:
 
 ||**Byte 1** |**Byte 2**|**Byte 3**|
 | :-------: | :-------: | :-------: | :-------: |
 | Variable Name | Sender_ID | Reciever_ID | Message_Type |
-| Variable Type | char | char | uint8_t |
-| Min Value | A | F |4 |
-| Max Value | A | F | 4|
-| Example | A | F |4 |
+| Variable Type | char | char | char |
+| Min Value | A | F | D |
+| Max Value | A | F | D |
+| Example | A | F | D |
 
-### Bluetooth Relayed Messages (to controller)
-
-Message type 5 - Send Speed Data:
+Message Type E - Send Speed Data:
 
 ||**Byte 1** |**Byte 2**|**Byte 3**|**Byte 4**|
 | :-------: | :-------: | :-------: | :-------: | :-------: |
 | Variable Name | Sender_ID | Reciever_ID | Message_Type | Speed |
-| Variable Type | char | char | uint8_t | uint8_t |
-| Min Value | H | A |5 | 0 |
-| Max Value | H | A | 5| 255|
-| Example | H | A |5 | 125 | 
+| Variable Type | char | char | char | int8_t |
+| Min Value | H | A | E | -128 |
+| Max Value | H | A | E | 127 |
+| Example | H | A | E | -3 | 
 
-Message type 6 - Send Distance Data:
+Message Type F - Send Distance Data:
 
-||**Byte 1** |**Byte 2**|**Byte 3**|**Byte 4**|
-| :-------: | :-------: | :-------: | :-------: | :-------: |
-| Variable Name | Sender_ID | Reciever_ID | Message_Type | Distance |
-| Variable Type | char | char | uint8_t | uint8_t |
-| Min Value | J | A |6 | 0 |
-| Max Value | J | A | 6| 255|
-| Example | J | A |6 | 125 | 
+||**Byte 1** |**Byte 2**|**Byte 3**|**Byte 4**|**Byte 5**|**Byte 6**|
+| :-------: | :-------: | :-------: | :-------: | :-------: | :-------: | :-------: |
+| Variable Name | Sender_ID | Reciever_ID | Message_Type | Distance 1 | Distance 2 | Distance 3 |
+| Variable Type | char | char | char | char | char | char |
+| Min Value | J | A | F | '0' | '0' | '0' |
+| Max Value | J | A | F | '9' | '9' | '9' |
+| Example | J | A | F | '1' | '8' | '5' |
 
-Message type 7 - Send Temperature Data:
+Message Type G - Send Temperature Data:
 
 ||**Byte 1** |**Byte 2**|**Byte 3**|**Byte 4**|
 | :-------: | :-------: | :-------: | :-------: | :-------: |
 | Variable Name | Sender_ID | Reciever_ID | Message_Type | Temperature |
-| Variable Type | char | char | uint8_t | uint8_t |
-| Min Value | I | A |7 | 0 |
-| Max Value | I | A | 7| 255|
-| Example | I | A |7 | 125 |
+| Variable Type | char | char | char | uint8_t |
+| Min Value | I | A | G | 0 |
+| Max Value | I | A | G | 255 |
+| Example | I | A | G | 125 | 
 
-### Debugging
-
-Message type 12 - Rolecall:
+Message Type L - Rolecall:
 
 ||**Byte 1** |**Byte 2**|**Byte 3**|
 | :-------: | :-------: | :-------: | :-------: |
 | Variable Name | Sender_ID | Reciever_ID | Message_Type |
-| Variable Type | char | char | uint8_t |
-| Min Value | A | X |12 |
-| Max Value | J | X | 12|
-| Example | A | J |12 |
+| Variable Type | char | char | char |
+| Min Value | A | X | J |
+| Max Value | J | X | J |
+| Example | A | X | J |
+
+## Controller GATT service attributes
+
+To accommodate wireless remote control, a custom BLE GATT service will be defined. In accordance with the BLE standard, custom services use a 16-byte UUID. The UUID for our controller service is 8bbd8ff7-3d84-4e81-9d46-70b6cb79e76a. The convention 'upstream' is used to refer to the wireless controller/human operator, and 'downstream' refers to the boat. Our service has the following characteristics: </br>
+
+Upstream Message (5699aead-41fc-4705-9c65-7c84d8bc04c):</br>
+This characteristic contains messages intended to be sent upstream (to the controller) from the boat. Any message of arbitrary length addressed to subsystems A1 or A2 will be written to this characteristic by A3, provided it is of a valid format. A2 will relay any messages addressed to A1 when notified of an update.
+
+|**Read**|**Write**|**Notify**|**Capture**|
+| :----: | :-----: | :------: | :-------: |
+| True   | False   | True     | False     |
+</br>
+Downstream Message (a037a1df-ccaf-480c-b7a4-6526a6848887):</br>
+This characteristic contains messages intended to be sent downstream (to the boat) from the controller. Any valid message will be written to this characteristic by subsystem A2 and relayed to the rest of the boat by A3 when notified of an update.
+
+|**Read**|**Write**|**Notify**|**Capture**|
+| :----: | :-----: | :------: | :-------: |
+| True   | True    | True     | True      |
+</br>
+Rollcall (d9cba376-e9c9-4db7-a6f2-4c6783c1dade):</br>
+To remove the requirement for parsing relayed messages from the previous two characteristics, a dedicated rollcall characteristic will be used. This can be written by either A2 or A3 to inform the other of a rollcall. Both systems will perform their rollcall functionality and proceed to relay the message upstream or downstream as needed, depending on the sender.
+
+|**Read**|**Write**|**Notify**|**Capture**|
+| :----: | :-----: | :------: | :-------: |
+| True   | True    | True     | True      |
