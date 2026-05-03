@@ -872,36 +872,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#bluetooth-control-apis" class="md-nav__link">
+  <a href="#uart-messages" class="md-nav__link">
     <span class="md-ellipsis">
-      Bluetooth Control APIs
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bluetooth-relayed-messages-to-boat" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bluetooth Relayed Messages (to boat)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bluetooth-relayed-messages-to-controller" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bluetooth Relayed Messages (to controller)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#debugging" class="md-nav__link">
-    <span class="md-ellipsis">
-      Debugging
+      UART Messages
     </span>
   </a>
   
@@ -909,6 +882,24 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type Data Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controller-gatt-service-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controller GATT service attributes
+    </span>
+  </a>
   
 </li>
       
@@ -963,36 +954,9 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#bluetooth-control-apis" class="md-nav__link">
+  <a href="#uart-messages" class="md-nav__link">
     <span class="md-ellipsis">
-      Bluetooth Control APIs
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bluetooth-relayed-messages-to-boat" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bluetooth Relayed Messages (to boat)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#bluetooth-relayed-messages-to-controller" class="md-nav__link">
-    <span class="md-ellipsis">
-      Bluetooth Relayed Messages (to controller)
-    </span>
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#debugging" class="md-nav__link">
-    <span class="md-ellipsis">
-      Debugging
+      UART Messages
     </span>
   </a>
   
@@ -1000,6 +964,24 @@
         
       </ul>
     </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#message-type-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Message Type Data Structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#controller-gatt-service-attributes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Controller GATT service attributes
+    </span>
+  </a>
   
 </li>
       
@@ -1029,165 +1011,13 @@
   <h1>Module's API</h1>
 
 <h2 id="overview">Overview</h2>
-<p>This page lists all possible API calls that subsystem A3 can handle. Subsystem A3 acts as the onboard side of the bluetooth relay connecting the handheld controller to the boat. As such, all messages sent to or from the controller are sent/recieved with a type 10 message to/from A2, and then sent as their original message type to their destination (using the original message's sender/reciever IDs). Bluetooth Heartbeat and Error APIs exist to warn the user of a disconnected wireless link, and stop boat propulsion/steering. The full-team Rollcall API is used for debugging faulty communications.</p>
-<p>The software for A3 can be downloaded <a href="../201A3_BLE_server.zip">here</a>. The software requires the Micropython firmware for ESP32 and the aioble library (available through the mip package manager). File text encoding is Unix-style UTF-8 Unicode. 
-<em>If you notice issues with text layout, please ensure only UTF-8 Unicode is being used or convert to your system (Microsoft Windows and Apple MacOS both use modified encoding - BSD, Linux-based, and other Unix-like systems should have no issues)</em></p>
-<h3 id="bluetooth-control-apis">Bluetooth Control APIs</h3>
-<p>Message type 9 - Bluetooth Error:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;"></th>
-<th style="text-align: center;"><strong>Byte 1</strong></th>
-<th style="text-align: center;"><strong>Byte 2</strong></th>
-<th style="text-align: center;"><strong>Byte 3</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">Variable Name</td>
-<td style="text-align: center;">Sender_ID</td>
-<td style="text-align: center;">Reciever_ID</td>
-<td style="text-align: center;">Message_Type</td>
-</tr>
-<tr>
-<td style="text-align: center;">Variable Type</td>
-<td style="text-align: center;">char</td>
-<td style="text-align: center;">char</td>
-<td style="text-align: center;">uint8_t</td>
-</tr>
-<tr>
-<td style="text-align: center;">Min Value</td>
-<td style="text-align: center;">B</td>
-<td style="text-align: center;">A</td>
-<td style="text-align: center;">9</td>
-</tr>
-<tr>
-<td style="text-align: center;">Max Value</td>
-<td style="text-align: center;">C</td>
-<td style="text-align: center;">G</td>
-<td style="text-align: center;">9</td>
-</tr>
-<tr>
-<td style="text-align: center;">Example</td>
-<td style="text-align: center;">C</td>
-<td style="text-align: center;">G</td>
-<td style="text-align: center;">9</td>
-</tr>
-</tbody>
-</table>
-<p>Message type 10 - Bluetooth Relay:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;"></th>
-<th style="text-align: center;"><strong>Byte 1</strong></th>
-<th style="text-align: center;"><strong>Byte 2</strong></th>
-<th style="text-align: center;"><strong>Byte 3</strong></th>
-<th style="text-align: center;"><strong>Byte 4</strong></th>
-<th style="text-align: center;"><strong>Byte 5</strong></th>
-<th style="text-align: center;"><strong>Byte 6</strong></th>
-<th style="text-align: center;"><strong>Byte 7</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">Variable Name</td>
-<td style="text-align: center;">Sender_ID</td>
-<td style="text-align: center;">Reciever_ID</td>
-<td style="text-align: center;">Message_Type</td>
-<td style="text-align: center;">Relay_Sender</td>
-<td style="text-align: center;">Relay_Reciever</td>
-<td style="text-align: center;">Relay_Type</td>
-<td style="text-align: center;">Data</td>
-</tr>
-<tr>
-<td style="text-align: center;">Variable Type</td>
-<td style="text-align: center;">char</td>
-<td style="text-align: center;">char</td>
-<td style="text-align: center;">char</td>
-<td style="text-align: center;">char</td>
-<td style="text-align: center;">char</td>
-<td style="text-align: center;">char</td>
-<td style="text-align: center;">char</td>
-</tr>
-<tr>
-<td style="text-align: center;">Min Value</td>
-<td style="text-align: center;">B</td>
-<td style="text-align: center;">B</td>
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">A</td>
-<td style="text-align: center;">A</td>
-<td style="text-align: center;">1</td>
-<td style="text-align: center;">00000000</td>
-</tr>
-<tr>
-<td style="text-align: center;">Max Value</td>
-<td style="text-align: center;">C</td>
-<td style="text-align: center;">C</td>
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">J</td>
-<td style="text-align: center;">X</td>
-<td style="text-align: center;">12</td>
-<td style="text-align: center;">11111111</td>
-</tr>
-<tr>
-<td style="text-align: center;">Example</td>
-<td style="text-align: center;">C</td>
-<td style="text-align: center;">B</td>
-<td style="text-align: center;">10</td>
-<td style="text-align: center;">I</td>
-<td style="text-align: center;">A</td>
-<td style="text-align: center;">7</td>
-<td style="text-align: center;">00110101</td>
-</tr>
-</tbody>
-</table>
-<p>Message type 11 - Bluetooth Heartbeat:</p>
-<table>
-<thead>
-<tr>
-<th style="text-align: center;"></th>
-<th style="text-align: center;"><strong>Byte 1</strong></th>
-<th style="text-align: center;"><strong>Byte 2</strong></th>
-<th style="text-align: center;"><strong>Byte 3</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align: center;">Variable Name</td>
-<td style="text-align: center;">Sender_ID</td>
-<td style="text-align: center;">Reciever_ID</td>
-<td style="text-align: center;">Message_Type</td>
-</tr>
-<tr>
-<td style="text-align: center;">Variable Type</td>
-<td style="text-align: center;">char</td>
-<td style="text-align: center;">char</td>
-<td style="text-align: center;">uint8_t</td>
-</tr>
-<tr>
-<td style="text-align: center;">Min Value</td>
-<td style="text-align: center;">B</td>
-<td style="text-align: center;">B</td>
-<td style="text-align: center;">11</td>
-</tr>
-<tr>
-<td style="text-align: center;">Max Value</td>
-<td style="text-align: center;">C</td>
-<td style="text-align: center;">C</td>
-<td style="text-align: center;">11</td>
-</tr>
-<tr>
-<td style="text-align: center;">Example</td>
-<td style="text-align: center;">B</td>
-<td style="text-align: center;">C</td>
-<td style="text-align: center;">11</td>
-</tr>
-</tbody>
-</table>
-<h3 id="bluetooth-relayed-messages-to-boat">Bluetooth Relayed Messages (to boat)</h3>
-<p>Message type 1 - Set Steering Angle</p>
+<p>This page lists all possible API calls that subsystem A3 can handle. Subsystem A3 acts as the onboard side of the bluetooth relay connecting the handheld controller to the boat.
+To facilitate communications, A3 uses defined message types following the team-wide UART protocol as well as GATT charecteristics defined by it's custom service. All of these message type are relayed to the necessary downstream board over UART or upstream via bluetooth with the exception of message type L (rollcall), which is a team-wide debugging API used to test the daisy-chain network by lighting each up board as it travels through the chain.</p>
+<p>The software for A3 can be downloaded <a href="../201A3_BLE_server.zip">here</a>. The software requires the Micropython firmware for ESP32-S3 and the aioble library (available through the mip package manager).</p>
+<p><em>Since Python syntax is dependant on indenting, operating systems using non-standard UTF-8 encoding may not display files properly. If you use Microsoft Windows or Apple OSX, please use the provided dos version of the file. Linux or BSD users can use the non-dos marked file without issues.</em></p>
+<h3 id="uart-messages">UART Messages</h3>
+<h2 id="message-type-data-structure">Message Type Data Structure</h2>
+<p>Message Type A - Set Steering Angle</p>
 <table>
 <thead>
 <tr>
@@ -1210,33 +1040,33 @@
 <td style="text-align: center;">Variable Type</td>
 <td style="text-align: center;">char</td>
 <td style="text-align: center;">char</td>
-<td style="text-align: center;">uint8_t</td>
+<td style="text-align: center;">char</td>
 <td style="text-align: center;">uint8_t</td>
 </tr>
 <tr>
 <td style="text-align: center;">Min Value</td>
 <td style="text-align: center;">A</td>
 <td style="text-align: center;">E</td>
-<td style="text-align: center;">1</td>
+<td style="text-align: center;">A</td>
 <td style="text-align: center;">0</td>
 </tr>
 <tr>
 <td style="text-align: center;">Max Value</td>
 <td style="text-align: center;">A</td>
 <td style="text-align: center;">E</td>
-<td style="text-align: center;">1</td>
+<td style="text-align: center;">A</td>
 <td style="text-align: center;">255</td>
 </tr>
 <tr>
 <td style="text-align: center;">Example</td>
 <td style="text-align: center;">A</td>
 <td style="text-align: center;">E</td>
-<td style="text-align: center;">1</td>
+<td style="text-align: center;">A</td>
 <td style="text-align: center;">125</td>
 </tr>
 </tbody>
 </table>
-<p>Message type 2 - Set Throttle Percentage:</p>
+<p>Message Type B - Set Throttle Percentage:</p>
 <table>
 <thead>
 <tr>
@@ -1259,33 +1089,33 @@
 <td style="text-align: center;">Variable Type</td>
 <td style="text-align: center;">char</td>
 <td style="text-align: center;">char</td>
-<td style="text-align: center;">uint8_t</td>
+<td style="text-align: center;">char</td>
 <td style="text-align: center;">uint8_t</td>
 </tr>
 <tr>
 <td style="text-align: center;">Min Value</td>
 <td style="text-align: center;">A</td>
 <td style="text-align: center;">D</td>
-<td style="text-align: center;">2</td>
+<td style="text-align: center;">B</td>
 <td style="text-align: center;">0</td>
 </tr>
 <tr>
 <td style="text-align: center;">Max Value</td>
 <td style="text-align: center;">A</td>
 <td style="text-align: center;">D</td>
-<td style="text-align: center;">2</td>
+<td style="text-align: center;">B</td>
 <td style="text-align: center;">255</td>
 </tr>
 <tr>
 <td style="text-align: center;">Example</td>
 <td style="text-align: center;">A</td>
 <td style="text-align: center;">D</td>
-<td style="text-align: center;">2</td>
+<td style="text-align: center;">B</td>
 <td style="text-align: center;">125</td>
 </tr>
 </tbody>
 </table>
-<p>Message type 3 - Set Camera Angle:</p>
+<p>Message Type C - Set Camera Angle:</p>
 <table>
 <thead>
 <tr>
@@ -1310,7 +1140,7 @@
 <td style="text-align: center;">Variable Type</td>
 <td style="text-align: center;">char</td>
 <td style="text-align: center;">char</td>
-<td style="text-align: center;">uint8_t</td>
+<td style="text-align: center;">char</td>
 <td style="text-align: center;">int8_t</td>
 <td style="text-align: center;">int8_t</td>
 </tr>
@@ -1318,7 +1148,7 @@
 <td style="text-align: center;">Min Value</td>
 <td style="text-align: center;">A</td>
 <td style="text-align: center;">G</td>
-<td style="text-align: center;">5</td>
+<td style="text-align: center;">C</td>
 <td style="text-align: center;">-128</td>
 <td style="text-align: center;">-128</td>
 </tr>
@@ -1326,7 +1156,7 @@
 <td style="text-align: center;">Max Value</td>
 <td style="text-align: center;">A</td>
 <td style="text-align: center;">G</td>
-<td style="text-align: center;">5</td>
+<td style="text-align: center;">C</td>
 <td style="text-align: center;">127</td>
 <td style="text-align: center;">127</td>
 </tr>
@@ -1334,13 +1164,13 @@
 <td style="text-align: center;">Example</td>
 <td style="text-align: center;">A</td>
 <td style="text-align: center;">G</td>
-<td style="text-align: center;">5</td>
+<td style="text-align: center;">C</td>
 <td style="text-align: center;">125</td>
 <td style="text-align: center;">90</td>
 </tr>
 </tbody>
 </table>
-<p>Message type 4 - Take Photo:</p>
+<p>Message Type D - Take Photo:</p>
 <table>
 <thead>
 <tr>
@@ -1361,30 +1191,29 @@
 <td style="text-align: center;">Variable Type</td>
 <td style="text-align: center;">char</td>
 <td style="text-align: center;">char</td>
-<td style="text-align: center;">uint8_t</td>
+<td style="text-align: center;">char</td>
 </tr>
 <tr>
 <td style="text-align: center;">Min Value</td>
 <td style="text-align: center;">A</td>
 <td style="text-align: center;">F</td>
-<td style="text-align: center;">4</td>
+<td style="text-align: center;">D</td>
 </tr>
 <tr>
 <td style="text-align: center;">Max Value</td>
 <td style="text-align: center;">A</td>
 <td style="text-align: center;">F</td>
-<td style="text-align: center;">4</td>
+<td style="text-align: center;">D</td>
 </tr>
 <tr>
 <td style="text-align: center;">Example</td>
 <td style="text-align: center;">A</td>
 <td style="text-align: center;">F</td>
-<td style="text-align: center;">4</td>
+<td style="text-align: center;">D</td>
 </tr>
 </tbody>
 </table>
-<h3 id="bluetooth-relayed-messages-to-controller">Bluetooth Relayed Messages (to controller)</h3>
-<p>Message type 5 - Send Speed Data:</p>
+<p>Message Type E - Send Speed Data:</p>
 <table>
 <thead>
 <tr>
@@ -1407,33 +1236,33 @@
 <td style="text-align: center;">Variable Type</td>
 <td style="text-align: center;">char</td>
 <td style="text-align: center;">char</td>
-<td style="text-align: center;">uint8_t</td>
-<td style="text-align: center;">uint8_t</td>
+<td style="text-align: center;">char</td>
+<td style="text-align: center;">int8_t</td>
 </tr>
 <tr>
 <td style="text-align: center;">Min Value</td>
 <td style="text-align: center;">H</td>
 <td style="text-align: center;">A</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">0</td>
+<td style="text-align: center;">E</td>
+<td style="text-align: center;">-128</td>
 </tr>
 <tr>
 <td style="text-align: center;">Max Value</td>
 <td style="text-align: center;">H</td>
 <td style="text-align: center;">A</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">255</td>
+<td style="text-align: center;">E</td>
+<td style="text-align: center;">127</td>
 </tr>
 <tr>
 <td style="text-align: center;">Example</td>
 <td style="text-align: center;">H</td>
 <td style="text-align: center;">A</td>
-<td style="text-align: center;">5</td>
-<td style="text-align: center;">125</td>
+<td style="text-align: center;">E</td>
+<td style="text-align: center;">-3</td>
 </tr>
 </tbody>
 </table>
-<p>Message type 6 - Send Distance Data:</p>
+<p>Message Type F - Send Distance Data:</p>
 <table>
 <thead>
 <tr>
@@ -1442,6 +1271,8 @@
 <th style="text-align: center;"><strong>Byte 2</strong></th>
 <th style="text-align: center;"><strong>Byte 3</strong></th>
 <th style="text-align: center;"><strong>Byte 4</strong></th>
+<th style="text-align: center;"><strong>Byte 5</strong></th>
+<th style="text-align: center;"><strong>Byte 6</strong></th>
 </tr>
 </thead>
 <tbody>
@@ -1450,39 +1281,49 @@
 <td style="text-align: center;">Sender_ID</td>
 <td style="text-align: center;">Reciever_ID</td>
 <td style="text-align: center;">Message_Type</td>
-<td style="text-align: center;">Distance</td>
+<td style="text-align: center;">Distance 1</td>
+<td style="text-align: center;">Distance 2</td>
+<td style="text-align: center;">Distance 3</td>
 </tr>
 <tr>
 <td style="text-align: center;">Variable Type</td>
 <td style="text-align: center;">char</td>
 <td style="text-align: center;">char</td>
-<td style="text-align: center;">uint8_t</td>
-<td style="text-align: center;">uint8_t</td>
+<td style="text-align: center;">char</td>
+<td style="text-align: center;">char</td>
+<td style="text-align: center;">char</td>
+<td style="text-align: center;">char</td>
 </tr>
 <tr>
 <td style="text-align: center;">Min Value</td>
 <td style="text-align: center;">J</td>
 <td style="text-align: center;">A</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">0</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">'0'</td>
+<td style="text-align: center;">'0'</td>
+<td style="text-align: center;">'0'</td>
 </tr>
 <tr>
 <td style="text-align: center;">Max Value</td>
 <td style="text-align: center;">J</td>
 <td style="text-align: center;">A</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">255</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">'9'</td>
+<td style="text-align: center;">'9'</td>
+<td style="text-align: center;">'9'</td>
 </tr>
 <tr>
 <td style="text-align: center;">Example</td>
 <td style="text-align: center;">J</td>
 <td style="text-align: center;">A</td>
-<td style="text-align: center;">6</td>
-<td style="text-align: center;">125</td>
+<td style="text-align: center;">F</td>
+<td style="text-align: center;">'1'</td>
+<td style="text-align: center;">'8'</td>
+<td style="text-align: center;">'5'</td>
 </tr>
 </tbody>
 </table>
-<p>Message type 7 - Send Temperature Data:</p>
+<p>Message Type G - Send Temperature Data:</p>
 <table>
 <thead>
 <tr>
@@ -1505,34 +1346,33 @@
 <td style="text-align: center;">Variable Type</td>
 <td style="text-align: center;">char</td>
 <td style="text-align: center;">char</td>
-<td style="text-align: center;">uint8_t</td>
+<td style="text-align: center;">char</td>
 <td style="text-align: center;">uint8_t</td>
 </tr>
 <tr>
 <td style="text-align: center;">Min Value</td>
 <td style="text-align: center;">I</td>
 <td style="text-align: center;">A</td>
-<td style="text-align: center;">7</td>
+<td style="text-align: center;">G</td>
 <td style="text-align: center;">0</td>
 </tr>
 <tr>
 <td style="text-align: center;">Max Value</td>
 <td style="text-align: center;">I</td>
 <td style="text-align: center;">A</td>
-<td style="text-align: center;">7</td>
+<td style="text-align: center;">G</td>
 <td style="text-align: center;">255</td>
 </tr>
 <tr>
 <td style="text-align: center;">Example</td>
 <td style="text-align: center;">I</td>
 <td style="text-align: center;">A</td>
-<td style="text-align: center;">7</td>
+<td style="text-align: center;">G</td>
 <td style="text-align: center;">125</td>
 </tr>
 </tbody>
 </table>
-<h3 id="debugging">Debugging</h3>
-<p>Message type 12 - Rolecall:</p>
+<p>Message Type L - Rolecall:</p>
 <table>
 <thead>
 <tr>
@@ -1553,25 +1393,119 @@
 <td style="text-align: center;">Variable Type</td>
 <td style="text-align: center;">char</td>
 <td style="text-align: center;">char</td>
-<td style="text-align: center;">uint8_t</td>
+<td style="text-align: center;">char</td>
 </tr>
 <tr>
 <td style="text-align: center;">Min Value</td>
 <td style="text-align: center;">A</td>
 <td style="text-align: center;">X</td>
-<td style="text-align: center;">12</td>
+<td style="text-align: center;">J</td>
 </tr>
 <tr>
 <td style="text-align: center;">Max Value</td>
 <td style="text-align: center;">J</td>
 <td style="text-align: center;">X</td>
-<td style="text-align: center;">12</td>
+<td style="text-align: center;">J</td>
 </tr>
 <tr>
 <td style="text-align: center;">Example</td>
 <td style="text-align: center;">A</td>
+<td style="text-align: center;">X</td>
 <td style="text-align: center;">J</td>
-<td style="text-align: center;">12</td>
+</tr>
+</tbody>
+</table>
+<h2 id="controller-gatt-service-attributes">Controller GATT service attributes</h2>
+<p>To accommodate wireless remote control, a custom BLE GATT service will be defined. In accordance with the BLE standard, custom services use a 16-byte UUID. The UUID for our controller service is 8bbd8ff7-3d84-4e81-9d46-70b6cb79e76a. The convention 'upstream' is used to refer to the wireless controller/human operator, and 'downstream' refers to the boat. Our service has the following characteristics: <br></p>
+<p>Upstream Message (5699aead-41fc-4705-9c65-7c84d8bc04c):<br>
+This characteristic contains messages intended to be sent upstream (to the controller) from the boat. Any message of arbitrary length addressed to subsystems A1 or A2 will be written to this characteristic by A3, provided it is of a valid format. A2 will relay any messages addressed to A1 when notified of an update.</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>Read</strong></th>
+<th style="text-align: center;"><strong>Write</strong></th>
+<th style="text-align: center;"><strong>Notify</strong></th>
+<th style="text-align: center;"><strong>Capture</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">True</td>
+<td style="text-align: center;">False</td>
+<td style="text-align: center;">True</td>
+<td style="text-align: center;">False</td>
+</tr>
+<tr>
+<td style="text-align: center;"><br></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">Downstream Message (a037a1df-ccaf-480c-b7a4-6526a6848887):<br></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">This characteristic contains messages intended to be sent downstream (to the boat) from the controller. Any valid message will be written to this characteristic by subsystem A2 and relayed to the rest of the boat by A3 when notified of an update.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>Read</strong></th>
+<th style="text-align: center;"><strong>Write</strong></th>
+<th style="text-align: center;"><strong>Notify</strong></th>
+<th style="text-align: center;"><strong>Capture</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">True</td>
+<td style="text-align: center;">True</td>
+<td style="text-align: center;">True</td>
+<td style="text-align: center;">True</td>
+</tr>
+<tr>
+<td style="text-align: center;"><br></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">Rollcall (d9cba376-e9c9-4db7-a6f2-4c6783c1dade):<br></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr>
+<td style="text-align: center;">To remove the requirement for parsing relayed messages from the previous two characteristics, a dedicated rollcall characteristic will be used. This can be written by either A2 or A3 to inform the other of a rollcall. Both systems will perform their rollcall functionality and proceed to relay the message upstream or downstream as needed, depending on the sender.</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align: center;"><strong>Read</strong></th>
+<th style="text-align: center;"><strong>Write</strong></th>
+<th style="text-align: center;"><strong>Notify</strong></th>
+<th style="text-align: center;"><strong>Capture</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">True</td>
+<td style="text-align: center;">True</td>
+<td style="text-align: center;">True</td>
+<td style="text-align: center;">True</td>
 </tr>
 </tbody>
 </table>
