@@ -1,0 +1,8 @@
+---
+title: Module Future Improvements
+---
+As mentioned in other section, this board currently lacks the ability to regulate or recharge it's battery by itself. For this demo, we used a NiMH battery with an external charger, which allowed us to bypass this restriction. This is a relatively cumbersome process which requires the battery to be unplugged, a temperature sensor to be connected to the center of the pack, and the battery to be reinserted after charging.
+A future improvement would be to add an integrated charging circuit. The schematic for such an improvement can be downloaded as a [pdf](A3_V1.pdf) or a [kicad project](A3_V1.zip).
+Aside from the battery charging system, major improvements would include adding external power breakout headers for debugging. When solving the power regulator issues, there was no simple way to supply 3.3V power to the system, so leads had to be soldered opportunistically.
+The initial choice of pins for the UART headers was incorrect, as RXD0 and TXD0 are where the ESP32 recieves hardware interrupts and programming data. This resulted in odd behaviour, such as crashing when the hex code for "3" was recieved (the signal for keyboard interrupt). Since the board had a spare header with solder-bridge pads to connect it to IO17 or IO18, it was not a major issue, but a future version certainly would need to have IO17/IO18 as the default.
+The footprints for the buttons were slightly too small for hand-soldering. While they did fit the buttons, it would make assembly easier to lengthen the pads.

@@ -6,10 +6,6 @@ title: Module's API
 This page lists all possible API calls that subsystem A3 can handle. Subsystem A3 acts as the onboard side of the bluetooth relay connecting the handheld controller to the boat.
 To facilitate communications, A3 uses defined message types following the team-wide UART protocol as well as GATT charecteristics defined by it's custom service. All of these message type are relayed to the necessary downstream board over UART or upstream via bluetooth with the exception of message type L (rollcall), which is a team-wide debugging API used to test the daisy-chain network by lighting each up board as it travels through the chain.
 
-The software for A3 can be downloaded [here](201A3_BLE_server.zip). The codebase's version history can be found on [github](https://github.com/nsgarde/ESP_BLE_server.git). The software requires the Micropython firmware for ESP32-S3 and the aioble library (available through the mip package manager).
-
-*Since Python syntax is dependant on indenting, operating systems using non-standard UTF-8 encoding may not display files properly. If you use Microsoft Windows or Apple OSX, please use the provided dos version of the file. Linux or BSD users can use the non-dos marked file without issues.*</br>
-
 ### UART Messages
 
 ## Message Type Data Structure
