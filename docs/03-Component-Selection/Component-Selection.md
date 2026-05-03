@@ -57,6 +57,9 @@ To perform the necessary bluetooth functions, the aioble library will be used. T
     | ----------------------------------------- | ---------------------------------------------------------------------- |
     | Very compact                              | Leadless design requires additional assembly equipment                 |
     | Low noise                                 |                                                                        |
+The AP63203WU-7 regulator was chosen due to it's high current capacity, size, and simple circuitry required.
+Note: The recieved tape of regulators was defective, and a LM2575D2T-3.3R4G regulator was used on a breakout board instead. This component was used as it was available from the course's supplies, and time was the most critical factor here. The AP63203WU-7 and it's associated circuit was proven to be functional later by swapping in a regulator from a teammate on another board. However, attempting to transfer this regulator to the main board resulted in one pin being removed due to improper desoldering.
+
 ### Battery
 No commercially available single cell has sufficient capacity to power the whole drone (estimated 5A peak theoretical draw) for a reasonable time of at least an hour. 12V is our maximum voltage, but the only sufficient cell type that can deliver this is lead-acid, which are heavy and expensive. As such our options are to use a pack of multiple cells. This course's structure does not allow packs with management circuitry built-in, so 12V Li-ion packs with a BMS are not an option. Options will be restricted to disposable packs or externally rechargable packs without an onboard BMS.
 

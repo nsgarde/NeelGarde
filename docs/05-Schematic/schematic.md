@@ -22,4 +22,5 @@ Back:<br>
 
 ## Resouces
 
-The schematic as a PDF download is available [*here*](A3V4.pdf), and the Zip folder of the project [*here*](A3V4.zip).
+The schematic as a PDF download is available [*here*](A3V4.pdf), and the zip folder of the project [*here*](A3V4.zip).
+A version of the schematic including a battery charging circuit for lithium-ion batteries that was shelved due to complexity and time constraints can be found as a PDF [*here*](A3V1.pdf) and a zip folder [*here*](A3V1.pdf). See [component selection](https://nsgarde.github.io/NeelGarde/03-Component-Selection/Component-Selection/) for more details.
