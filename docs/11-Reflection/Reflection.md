@@ -13,7 +13,7 @@ The module succeeded in meeting all of it's target goals across multiple boards.
     - zero the memory address a few bytes after the firmware ends
     - rewrite flash
     - esptool run
-- On desktop Linux systems (personally using Debian 13), Pymakr will not work, as it is severely outdated. A more flexibile and standard workflow can be obtained by writing simple shell scripts around the mpremote tool. You can use your text editor/IDE of choice to write python code and use mpremote or your shell scripts from the terminal.
+- On desktop Linux systems (personally using Debian 13), Pymakr will not work, as it is severely outdated. A more flexible and standard workflow can be obtained by writing simple shell scripts around the mpremote tool. You can use your text editor/IDE of choice to write python code and use mpremote or your shell scripts from the terminal.
     - mpremote allows you to mount your local directory to the esp32. This is very useful for testing, since you don't need to copy anything.
     - mpremote ls/cp/rm commands follow standard posix syntax.
 - Leaving IO0 floating will cause the ESP32 to believe it is in boot mode. Pull this pin high (with a jumper or a switch).
