@@ -25,6 +25,10 @@ This datasheet contains the following sections:<br>
 [05 - Schematic](https://nsgarde.github.io/NeelGarde/05-Schematic/schematic/)<br>
 [06 - PCB]()<br>
 [07 - Power Budget](https://nsgarde.github.io/NeelGarde/07-Power%20Budget/Power-Budget/)<br>
+[08 - API](https://nsgarde.github.io/NeelGarde/08-API/api/)
+[09 - Resources](https://nsgarde.github.io/NeelGarde/09-Resources/resources/)
+[10 - Hardware V2](https://nsgarde.github.io/NeelGarde/10-Hardware%20V2/hardwarev2/)
+[11 - Reflection](https://nsgarde.github.io/NeelGarde/11-Reflection/Reflection/)
 [Appendix](https://nsgarde.github.io/NeelGarde/Appendix/)<br>
 
 ### Project Summary
