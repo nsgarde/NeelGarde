@@ -1,6 +1,6 @@
 site_name: EGR 314 Neel Garde
 site_url: https://neelgarde.github.io/NeelGarde/
-repo_url: https://github.com/NeelGarde/NeelGarde
+repo_url: https://github.com/nsgarde/NeelGarde
 edit_uri: edit/main/docs/
 theme:
   name: material
